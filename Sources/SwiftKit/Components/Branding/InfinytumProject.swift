@@ -14,7 +14,11 @@ public struct InfinytumProject: View {
             Text("An Infinytum Project").font(.system(size: 15)).fontWeight(.semibold)
         }.onTapGesture {
             if let url = URL(string: "https://infinytum.co") {
+                #if canImport(UIKit)
                    UIApplication.shared.open(url)
+                #else
+                    NSWorkspace.shared.open(url)
+                #endif
             }
         }
     }

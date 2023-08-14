@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+#if canImport(UIKit)
 struct ImagePicker: UIViewControllerRepresentable {
 
     @Environment(\.presentationMode)
@@ -66,3 +67,4 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 
 }
+#endif

@@ -37,7 +37,11 @@ public struct WelcomeTemplate<Content: View>: View {
                 Spacer()
             }
             ZStack {
+                #if canImport(UIKit)
                 Color(uiColor: UIColor.systemBackground).edgesIgnoringSafeArea(.all)
+                #else
+                Color(.windowBackgroundColor).edgesIgnoringSafeArea(.all)
+                #endif
                 VStack {
                     content
                 }.padding()

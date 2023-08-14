@@ -33,7 +33,11 @@ struct SettingsLink: View {
             }.foregroundColor(titleColor)
         }.padding(.vertical, 10).onTapGesture {
             if let url = URL(string: link) {
+                #if canImport(UIKit)
                    UIApplication.shared.open(url)
+                #else
+                    NSWorkspace.shared.open(url)
+                #endif
             }
         }
     }
