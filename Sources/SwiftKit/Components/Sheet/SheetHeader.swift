@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SheetHeader: View {
+public struct SheetHeader: View {
     @Environment(\.presentationMode) var presentationMode
     
     var title: String
@@ -49,7 +49,7 @@ struct SheetHeader: View {
         self.secondary = secondary
     }
     
-    var body: some View {
+    public var body: some View {
         ZStack {
             HStack(alignment: .center) {
                 Spacer()
