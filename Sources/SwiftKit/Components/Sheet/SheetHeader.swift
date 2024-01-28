@@ -15,35 +15,35 @@ public struct SheetHeader: View {
     var secondary: String?
     var dismiss: (DismissalReason) -> Bool = {_ in return true}
     
-    init(_ title: String) {
+    public init(_ title: String) {
         self.title = title
     }
     
-    init(_ title: String, primary: String?) {
+    public init(_ title: String, primary: String?) {
         self.title = title
         self.primary = primary
     }
     
-    init(_ title: String, primary: String?, dismiss: @escaping (DismissalReason) -> Bool) {
+    public init(_ title: String, primary: String?, dismiss: @escaping (DismissalReason) -> Bool) {
         self.title = title
         self.primary = primary
         self.dismiss = dismiss
     }
     
-    init(_ title: String, secondary: String, dismiss: @escaping (DismissalReason) -> Bool) {
+    public init(_ title: String, secondary: String, dismiss: @escaping (DismissalReason) -> Bool) {
         self.title = title
         self.secondary = secondary
         self.dismiss = dismiss
     }
     
-    init(_ title: String, primary: String?, secondary: String, dismiss: @escaping (DismissalReason) -> Bool) {
+    public init(_ title: String, primary: String?, secondary: String, dismiss: @escaping (DismissalReason) -> Bool) {
         self.title = title
         self.primary = primary
         self.secondary = secondary
         self.dismiss = dismiss
     }
     
-    init(_ title: String, primary: String?, secondary: String) {
+    public init(_ title: String, primary: String?, secondary: String) {
         self.title = title
         self.primary = primary
         self.secondary = secondary
@@ -79,7 +79,7 @@ public struct SheetHeader: View {
         }.padding(.top).padding(.horizontal).padding(.bottom, 5)
     }
     
-    enum DismissalReason: Int {
+    public enum DismissalReason: Int {
         case Primary = 0
         case Secondary = 1
     }
